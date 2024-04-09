@@ -1,14 +1,17 @@
 import {View, Text, StyleSheet, TextInput, ScrollView, TouchableOpacity, Image } from 'react-native'
 import { Entypo } from '@expo/vector-icons';
 
-export default function App(){
+export default function CadastroPessoal(){
   return(
     
     <View style = {styles.container}>
       <ScrollView>
 
         <View style = {styles.viewTitle}>
-          <Entypo name="menu" size={24} color="#434343" style = {styles.menuIcon} />
+          <TouchableOpacity>
+            <Entypo name="menu" size={24} color="#434343" style = {styles.menuIcon} />
+          </TouchableOpacity>
+          
           <Text style={styles.title}>Cadastro Pessoal</Text>
         </View>
 
@@ -82,7 +85,7 @@ export default function App(){
         <View style = {styles.imageButtonContainer}> 
           <TouchableOpacity style = {styles.imageButton} onPress={() => console.log('Botão pressionado')}>
             <Image
-              source={require('./src/assets/botao_adicionar.png')}
+              source={require('../assets/botao_adicionar.png')}
               style={styles.imageAddButton}
             />
             <Text style ={styles.textButton}> Adicionar foto</Text>
@@ -233,3 +236,5 @@ const styles = StyleSheet.create({
     }
 
 })
+
+export{CadastroPessoal};
