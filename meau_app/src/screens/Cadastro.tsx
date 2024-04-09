@@ -1,6 +1,6 @@
 import {View, Text, StyleSheet, TextInput} from 'react-native'
 
-export default function App(){
+export default function Cadastro(){
   return(
     <View style = {styles.container}>
         <View style = {styles.viewTitle}>
