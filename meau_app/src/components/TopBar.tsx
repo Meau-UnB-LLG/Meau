@@ -1,20 +1,28 @@
-import { View, Text, StyleSheet, useWindowDimensions } from "react-native"
+import { View, Text, StyleSheet, useWindowDimensions, TouchableOpacity } from "react-native"
 
 import { Entypo, Ionicons } from '@expo/vector-icons'
 
 
+
 interface TopBarProps {
     nome: string,
-    icone: string
+    icone: string,
+    irParaPagina?: () => void
 }
 
-export function TopBar( {nome, icone} : TopBarProps) {
+export function TopBar( {nome, icone, irParaPagina} : TopBarProps) {
 
     const { width } = useWindowDimensions();
 
     interface iconesMap {
         [key: string]: React.ReactNode;
-      }
+    }
+
+    const funcaoVazia = () => {};
+    
+    if(irParaPagina == undefined) {
+        irParaPagina = funcaoVazia;
+    }
     
     const iconesMap: iconesMap = {
         menu: <Entypo name="menu" size={24} color="#434343" style={styles.icones}/>,
@@ -29,7 +37,9 @@ export function TopBar( {nome, icone} : TopBarProps) {
 
         <View style = { [styles.barra, {width: width }] }>
 
-            { iconesMap[icone] }
+            <TouchableOpacity onPress={irParaPagina}>
+                { iconesMap[icone] }
+            </TouchableOpacity>
 
             <Text style={styles.texto} > {nome} </Text>
         </View>

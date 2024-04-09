@@ -3,12 +3,26 @@ import { StyleSheet, Text, View } from "react-native";
 import Constants from 'expo-constants';
 import { TopBar } from "../components/TopBar";
 
-import { fonteCarregada  } from "../utils/FontsLoad";
+import { fonteCarregada } from "../utils/FontsLoad";
+
 import BotaoUsual from "../components/BotaoUsual";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
-export default function AvisoCadastro() {
 
-    console.log(fonteCarregada);
+type StackRoutesParametros = {
+    Inicial: undefined;
+    AvisoCadastro: undefined;
+    Login: undefined;
+    CadastroPessoal: undefined;
+};
+
+type AvisoCadastroProps = {
+    navigation: NativeStackNavigationProp<StackRoutesParametros, 'Inicial'>;
+};
+
+export default function AvisoCadastro( { navigation } : AvisoCadastroProps) {
+
+    console.log("fonteCarregada: aviso cadastro: " + fonteCarregada);
 
     return(
         <View style={styles.container}>
@@ -16,6 +30,7 @@ export default function AvisoCadastro() {
             <TopBar
                 nome = 'Cadastro'
                 icone = 'voltar'
+                irParaPagina={() => navigation.navigate("Inicial")}
             />
 
             {fonteCarregada ? (
@@ -35,7 +50,7 @@ export default function AvisoCadastro() {
                 </Text>
             </View>
 
-            <BotaoUsual texto='FAZER CADASTRO' marginTop={52}/>
+            <BotaoUsual texto='FAZER CADASTRO' marginTop={52} irParaPagina={() => navigation.navigate("CadastroPessoal")}/>
 
             <View style={[styles.middleView, {marginTop: 44}]}>
                 <Text style={styles.middleText}>
@@ -43,7 +58,7 @@ export default function AvisoCadastro() {
                 </Text>
             </View>
 
-            <BotaoUsual texto='FAZER LOGIN' marginTop={16}/>
+            <BotaoUsual texto='FAZER LOGIN' marginTop={16} irParaPagina={() => navigation.navigate("Login")}/>
 
         </View>
     );

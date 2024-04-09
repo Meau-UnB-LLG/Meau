@@ -1,9 +1,9 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Cadastro from '../../screens/Cadastro';
-import HomeTeste from '../../screens/HomeTeste';
+
 import Login from '../../screens/Login';
 import Inicial from '../../screens/Inicial';
 import AvisoCadastro from '../../screens/AvisoCadastro';
+import CadastroPessoal from '../../screens/CadastroPessoal';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +17,7 @@ export default function StackRoutes() {
 
       <Stack.Screen name="Login" component={Login} />
 
-      <Stack.Screen name="Cadastro" component={Cadastro} />
+      <Stack.Screen name="CadastroPessoal" component={CadastroPessoal} />
 
     </Stack.Navigator>
   );

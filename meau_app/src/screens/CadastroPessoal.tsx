@@ -85,7 +85,7 @@ export default function CadastroPessoal(){
         <View style = {styles.imageButtonContainer}> 
           <TouchableOpacity style = {styles.imageButton} onPress={() => console.log('Botão pressionado')}>
             <Image
-              source={require('../assets/botao_adicionar.png')}
+              source={require('../assets/images/botao_adicionar.png')}
               style={styles.imageAddButton}
             />
             <Text style ={styles.textButton}> Adicionar foto</Text>
@@ -94,7 +94,7 @@ export default function CadastroPessoal(){
 
         <View>
           <TouchableOpacity style = {styles.loginButton}>
-            <Text style = {styles.textLogin}>Fazer Cadastro</Text>
+            <Text >Fazer Cadastro</Text>
           </TouchableOpacity>
         </View>
 

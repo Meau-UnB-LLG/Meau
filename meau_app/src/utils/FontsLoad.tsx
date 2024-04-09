@@ -19,7 +19,5 @@ export function FontsLoad() {
     }, []);
 
 
-    return (
-        <></>
-    );
+    return null;
 };

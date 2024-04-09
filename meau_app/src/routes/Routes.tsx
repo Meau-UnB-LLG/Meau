@@ -1,7 +1,7 @@
 
 import { NavigationContainer } from "@react-navigation/native";
-import StackRoutes from "./StackRoutes";
-import { FontsLoad } from "../../utils/FontsLoad";
+import StackRoutes from "./stack/StackRoutes";
+import { FontsLoad } from "../utils/FontsLoad";
 
 
 export default function Routes() {

@@ -5,17 +5,18 @@ import YellowB from '../components/YellowB';
 
 import Constants from 'expo-constants';
 import * as Font from 'expo-font';
+
 import { useEffect, useState } from 'react';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-const PlaceLogoImage = require('../assets/Meau_marca_2.png');
+const PlaceLogoImage = require('../assets/images/Meau_marca_2.png');
 
 type StackRoutesParametros = {
     Inicial: undefined;
     AvisoCadastro: undefined;
     Login: undefined;
-    Cadastro: undefined;
-  };
+    CadastroPessoal: undefined;
+};
 
 type InicialProps = {
     navigation: NativeStackNavigationProp<StackRoutesParametros, 'Inicial'>;
@@ -40,7 +41,10 @@ export default function Inicial({ navigation } : InicialProps) {
         }
 
         carregarFontes();
+        console.log('Rodou fonts inicial');
     }, []);
+
+    console.log("fonteCarregada: inicial: " + fonteCarregada);
 
     return (
 
