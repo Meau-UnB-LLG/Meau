@@ -22,7 +22,7 @@ type AvisoCadastroProps = {
 
 export default function AvisoCadastro( { navigation } : AvisoCadastroProps) {
 
-    console.log("fonteCarregada: aviso cadastro: " + fonteCarregada);
+    // console.log("fonteCarregada: aviso cadastro: " + fonteCarregada);
 
     return(
         <View style={styles.container}>
