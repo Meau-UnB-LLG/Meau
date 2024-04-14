@@ -1,18 +1,18 @@
 import { Keyboard, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 interface BotaoProps {
-    texto: string
-    marginTop: number
-    irParaPagina?: () => void
+    texto: string;
+    marginTop: number;
+    irParaPagina?: () => void;
     cor?: string;
-    largura?: number; 
-    altura?: number
-    marginDown: number
-    raio: number
-    corTexto: string
+    largura?: number;
+    altura?: number;
+    marginDown?: number;
+    raio?: number;
+    corTexto?: string;
 }
 
-export default function BotaoUsual( {texto, marginTop, marginDown, cor, largura, altura, irParaPagina, raio, corTexto} : BotaoProps ) {
+export default function BotaoUsual( {texto, marginTop, irParaPagina, cor, largura, altura, marginDown, raio, corTexto} : BotaoProps ) {
 
     const fecharTeclado = () => {
 
