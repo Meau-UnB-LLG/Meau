@@ -20,6 +20,7 @@ type StackRoutesParametros = {
     Login: undefined;
     CadastroPessoal: undefined;
     CadastroAnimal: undefined;
+    PreencherCadastroAnimal: undefined;
 };
 
 type InicialProps = {
@@ -78,7 +79,7 @@ export default function Inicial({ navigation } : InicialProps) {
             <View style={styles.menuCenter}>
                 <YellowB onPress={() => navigation.navigate("AvisoCadastro")} text="ADOTAR"/>
                 <YellowB onPress={() => navigation.navigate("AvisoCadastro")} text="AJUDAR"/>
-                <YellowB onPress={() => navigation.navigate("CadastroAnimal")} text="CADASTRAR ANIMAL"/>
+                <YellowB onPress={() => navigation.navigate("PreencherCadastroAnimal")} text="CADASTRAR ANIMAL"/>
             </View>
 
             <TouchableOpacity onPress={() => navigation.navigate("Login")}>

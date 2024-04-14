@@ -41,7 +41,7 @@ export default function CadastroAnimal({ navigation } : MeusPetsProps){
                     em contato!
                 </Text>
 
-                <BotaoUsual style = {styles.button} texto="Meus Pets" marginTop = {250} irParaPagina={() => navigation.navigate("Login")}  > </BotaoUsual>
+                <BotaoUsual texto="Meus Pets" marginTop = {250} irParaPagina={() => navigation.navigate("Login")}  > </BotaoUsual>
             </View>
         
         </TouchableWithoutFeedback>    

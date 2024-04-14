@@ -5,6 +5,7 @@ import Inicial from '../../screens/Inicial';
 import AvisoCadastro from '../../screens/AvisoCadastro';
 import CadastroPessoal from '../../screens/CadastroPessoal';
 import CadastroAnimal from '../../screens/CadastroAnimal';
+import PreencherCadastroAnimal from '../../screens/PreencherCadastroAnimal';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,8 @@ export default function StackRoutes() {
       <Stack.Screen name="CadastroPessoal" component={CadastroPessoal} />
 
       <Stack.Screen name="CadastroAnimal" component={CadastroAnimal} />
+
+      <Stack.Screen name="PreencherCadastroAnimal" component={PreencherCadastroAnimal} />
 
     </Stack.Navigator>
   );

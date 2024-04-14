@@ -4,9 +4,15 @@ interface BotaoProps {
     texto: string
     marginTop: number
     irParaPagina?: () => void
+    cor?: string;
+    largura?: number; 
+    altura?: number
+    marginDown: number
+    raio: number
+    corTexto: string
 }
 
-export default function BotaoUsual( {texto, marginTop, irParaPagina, alignSelf} : BotaoProps ) {
+export default function BotaoUsual( {texto, marginTop, marginDown, cor, largura, altura, irParaPagina, raio, corTexto} : BotaoProps ) {
 
     const fecharTeclado = () => {
 
@@ -20,10 +26,10 @@ export default function BotaoUsual( {texto, marginTop, irParaPagina, alignSelf} 
     return (
         <>
             <TouchableOpacity
-                style={[styles.botao, {marginTop: marginTop}]}
+                style={[styles.botao, {borderRadius: raio, marginBottom: marginDown, marginTop: marginTop, backgroundColor: cor, width: largura, height: altura}]}
                 onPress={fecharTeclado}
             >
-                    <Text style={styles.botao_texto}> {texto} </Text>
+                    <Text style={[styles.botao_texto, {color: corTexto}]}> {texto} </Text>
             </TouchableOpacity>
         </>
     )
@@ -41,9 +47,10 @@ const styles = StyleSheet.create({
         
         shadowColor: 'black',
         shadowRadius: 2,
-        shadowOpacity: 0.8,
+        shadowOpacity: 1,
         elevation: 10,
-        shadowOffset: { width: 0, height: 2}
+        shadowOffset: { width: 0, height: 2},
+        margin: 2
 
     },
 

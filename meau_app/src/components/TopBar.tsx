@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
     texto: {
         fontFamily: 'Roboto',
         fontSize: 20,
-        fontWeight: 'bold',
         color: '#434343',
         marginLeft: 30
     }
