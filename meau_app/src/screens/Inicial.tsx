@@ -9,6 +9,9 @@ import * as Font from 'expo-font';
 import { useEffect, useState } from 'react';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
+import CadastroAnimal from './CadastroAnimal';
+
+
 const PlaceLogoImage = require('../assets/images/Meau_marca_2.png');
 
 type StackRoutesParametros = {
@@ -16,6 +19,7 @@ type StackRoutesParametros = {
     AvisoCadastro: undefined;
     Login: undefined;
     CadastroPessoal: undefined;
+    CadastroAnimal: undefined;
 };
 
 type InicialProps = {
@@ -74,7 +78,7 @@ export default function Inicial({ navigation } : InicialProps) {
             <View style={styles.menuCenter}>
                 <YellowB onPress={() => navigation.navigate("AvisoCadastro")} text="ADOTAR"/>
                 <YellowB onPress={() => navigation.navigate("AvisoCadastro")} text="AJUDAR"/>
-                <YellowB onPress={() => navigation.navigate("AvisoCadastro")} text="CADASTRAR ANIMAL"/>
+                <YellowB onPress={() => navigation.navigate("CadastroAnimal")} text="CADASTRAR ANIMAL"/>
             </View>
 
             <TouchableOpacity onPress={() => navigation.navigate("Login")}>

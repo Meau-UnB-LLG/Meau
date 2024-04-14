@@ -6,7 +6,7 @@ interface BotaoProps {
     irParaPagina?: () => void
 }
 
-export default function BotaoUsual( {texto, marginTop, irParaPagina} : BotaoProps ) {
+export default function BotaoUsual( {texto, marginTop, irParaPagina, alignSelf} : BotaoProps ) {
 
     const fecharTeclado = () => {
 

@@ -7,10 +7,11 @@ import { Entypo, Ionicons } from '@expo/vector-icons'
 interface TopBarProps {
     nome: string,
     icone: string,
-    irParaPagina?: () => void
+    irParaPagina?: () => void,
+    cor?: string
 }
 
-export function TopBar( {nome, icone, irParaPagina} : TopBarProps) {
+export function TopBar( {nome, icone, irParaPagina, cor} : TopBarProps) {
 
     const { width } = useWindowDimensions();
 
@@ -35,7 +36,7 @@ export function TopBar( {nome, icone, irParaPagina} : TopBarProps) {
     
     return (
 
-        <View style = { [styles.barra, {width: width }] }>
+        <View style = { [styles.barra, {width: width, backgroundColor: cor }] }>
 
             <TouchableOpacity onPress={irParaPagina}>
                 { iconesMap[icone] }
