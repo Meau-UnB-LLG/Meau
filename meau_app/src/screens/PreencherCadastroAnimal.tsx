@@ -1,5 +1,6 @@
 import {Text, View, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image}from 'react-native'
 import Constants from 'expo-constants';
+
 import { TopBar } from '../components/TopBar';
 import BotaoUsual from '../components/BotaoUsual';
 import BotaoMarcavel from '../components/BotaoMarcavelRedondo';
@@ -7,13 +8,24 @@ import BotaoMarcavelRedondo from '../components/BotaoMarcavelRedondo';
 import BotaoMarcavelQuadrado from '../components/BotaoMarcavelQuadrado';
 import BotaoMarcavelQuadradoOpaco from '../components/BotaoMarcavelQuadradoOpaco';
 
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 
+type StackRoutesParametros = {
+    CadastroAnimal : undefined;
+    Login : undefined;
+};
 
-export default function PreencherCadastroAnimal(){
+
+type MeusPetsProps = {
+    navigation: NativeStackNavigationProp<StackRoutesParametros, 'CadastroAnimal'>;
+};
+
+
+export default function PreencherCadastroAnimal({ navigation } : MeusPetsProps){
     return(
-        
-        <ScrollView>
+       <View style = {{paddingTop: Constants.statusBarHeight}}> 
+        <ScrollView >
             <View style = {styles.container}>
                 <TopBar
                     nome='Cadastro do Animal'
@@ -151,19 +163,19 @@ export default function PreencherCadastroAnimal(){
                 <View style = {styles.containerName}></View>
 
                 <View style = {{alignItems: 'center'}}>
-                    <BotaoUsual texto="COLOCAR PARA ADOÇÃO " marginTop = {24} largura={232} altura={40} cor='#ffd358' raio={4} marginDown={24}></BotaoUsual>
+                    <BotaoUsual texto="COLOCAR PARA ADOÇÃO " marginTop = {24} largura={232} altura={40} 
+                    cor='#ffd358' raio={4} marginDown={24} irParaPagina={() => navigation.navigate('CadastroAnimal')}></BotaoUsual>
                 </View>
              
             </View>
-        </ScrollView>
+         </ScrollView>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
-
     container: {
         flex: 1,
-        paddingTop: Constants.statusBarHeight,
         backgroundColor: '#f9f9f9',
     },
     title: {
@@ -192,6 +204,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#e6e7e8',
         marginTop: 8,
         justifyContent: 'flex-start',
+        marginLeft: 24
       
       },
       imageButton:{
