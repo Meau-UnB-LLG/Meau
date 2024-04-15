@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-interface BotaoMarcavelQuadradoOpacoProps {
-  label: string;
-  onPress?: () => void;
-  checked?: boolean;
-}
-
-export default function BotaoMarcavelQuadradoOpaco({ label, onPress, checked } : BotaoMarcavelQuadradoOpacoProps) {
+export default function BotaoMarcavelQuadradoOpaco({ label, onPress, checked }) {
   return (
     <TouchableOpacity style={styles.radioButton} onPress={onPress}>
       <View style={[styles.radioButtonOuter, checked && styles.radioButtonOuterSelected]}>
