@@ -50,7 +50,8 @@ export default function AvisoCadastro( { navigation } : AvisoCadastroProps) {
                 </Text>
             </View>
 
-            <BotaoUsual texto='FAZER CADASTRO' marginTop={52} irParaPagina={() => navigation.navigate("CadastroPessoal")}/>
+            <BotaoUsual texto='FAZER CADASTRO' marginTop={52} irParaPagina={() => navigation.navigate("CadastroPessoal")} cor='#ffd358'
+                largura={232} altura={40} />
 
             <View style={[styles.middleView, {marginTop: 44}]}>
                 <Text style={styles.middleText}>
@@ -58,7 +59,8 @@ export default function AvisoCadastro( { navigation } : AvisoCadastroProps) {
                 </Text>
             </View>
 
-            <BotaoUsual texto='FAZER LOGIN' marginTop={16} irParaPagina={() => navigation.navigate("Login")}/>
+            <BotaoUsual texto='FAZER LOGIN' marginTop={16} irParaPagina={() => navigation.navigate("Login")} cor='#ffd358'
+                largura={232} altura={40} />
 
         </View>
     );

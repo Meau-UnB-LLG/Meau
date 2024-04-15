@@ -3,15 +3,15 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 
 
 interface YellowBProps {
-    texto: string
+    text: string
     onPress: () => void
 }
 
-export default function YellowB( { texto, onPress } : YellowBProps ){
+export default function YellowB( { text, onPress } : YellowBProps ){
     return(
         <View style={styles.rectangle}> 
             <Pressable onPress={onPress} style={styles.button}>
-                <Text style={styles.buttonText}>{texto}</Text>
+                <Text style={styles.buttonText}>{text}</Text>
             </Pressable>
         </View> 
     );

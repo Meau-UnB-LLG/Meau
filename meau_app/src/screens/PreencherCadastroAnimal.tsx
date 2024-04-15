@@ -3,7 +3,7 @@ import Constants from 'expo-constants';
 
 import { TopBar } from '../components/TopBar';
 import BotaoUsual from '../components/BotaoUsual';
-import BotaoMarcavel from '../components/BotaoMarcavelRedondo';
+
 import BotaoMarcavelRedondo from '../components/BotaoMarcavelRedondo';
 import BotaoMarcavelQuadrado from '../components/BotaoMarcavelQuadrado';
 import BotaoMarcavelQuadradoOpaco from '../components/BotaoMarcavelQuadradoOpaco';
@@ -37,14 +37,14 @@ export default function PreencherCadastroAnimal({ navigation } : MeusPetsProps){
                 <Text style = {styles.title}>Tenho interesse em cadastrar o animal para:</Text>
 
                 <View style = {styles.containerButtons}>
-                    <BotaoUsual texto = 'Adoção' cor='#ffd358' largura={100} altura={40} marginTop={8} marginDown={16} raio={2} ></BotaoUsual>
+                    <BotaoUsual texto = 'Adoção' marginTop={8} cor='#ffd358' largura={100} altura={40} marginDown={16} raio={2} ></BotaoUsual>
                     <View style={{ width: 8 }} />
-                    <BotaoUsual texto = 'Aparinhar'  largura={100} altura={40} cor='#f1f2f2' marginTop={8} marginDown={ 16} raio={2} corTexto='#bdbdbd'></BotaoUsual>  
+                    <BotaoUsual texto = 'Aparinhar' marginTop={8} cor='#f1f2f2' largura={100} altura={40} marginDown={16} raio={2} corTexto='#bdbdbd'></BotaoUsual>  
                     <View style={{ width: 8 }} />
-                    <BotaoUsual texto = 'Ajuda'  largura={100} altura={40} cor='#f1f2f2' marginTop={8}  marginDown={ 16} raio={2}></BotaoUsual>
+                    <BotaoUsual texto = 'Ajuda' marginTop={8} cor='#f1f2f2' largura={100} altura={40}  marginDown={16} raio={2}></BotaoUsual>
                 </View>
 
-                <View style={{marginTop: 8, backgroundColor: '#e6e7e8', width:'312', height: 0.8 }}></View>
+                <View style={{marginTop: 8, backgroundColor: '#e6e7e8', width: 312, height: 0.8 }}></View>
                 <Text style={{fontSize : 16, marginTop: 8, marginLeft:24 }}>Adoção</Text>
 
                 <Text style={{fontSize : 16, marginTop: 20, color:'#f7a800', marginLeft:24 }}>NOME DO ANIMAL</Text>
@@ -163,8 +163,8 @@ export default function PreencherCadastroAnimal({ navigation } : MeusPetsProps){
                 <View style = {styles.containerName}></View>
 
                 <View style = {{alignItems: 'center'}}>
-                    <BotaoUsual texto="COLOCAR PARA ADOÇÃO " marginTop = {24} largura={232} altura={40} 
-                    cor='#ffd358' raio={4} marginDown={24} irParaPagina={() => navigation.navigate('CadastroAnimal')}></BotaoUsual>
+                    <BotaoUsual texto="COLOCAR PARA ADOÇÃO " marginTop = {24} irParaPagina={() => navigation.navigate('CadastroAnimal')} 
+                        cor='#ffd358' largura={232} altura={40} marginDown={24} raio={4}  ></BotaoUsual>
                 </View>
              
             </View>
@@ -260,5 +260,3 @@ const styles = StyleSheet.create({
       },
 
 })
-
-export{PreencherCadastroAnimal};
