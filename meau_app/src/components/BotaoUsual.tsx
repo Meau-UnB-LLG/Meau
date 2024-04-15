@@ -10,24 +10,31 @@ interface BotaoProps {
     marginDown?: number;
     raio?: number;
     corTexto?: string;
+    login?: (user: string, senha: string) => void;
+    user?: string;
+    senha?: string;
 }
 
-export default function BotaoUsual( {texto, marginTop, irParaPagina, cor, largura, altura, marginDown, raio, corTexto} : BotaoProps ) {
+export default function BotaoUsual( {texto, marginTop, irParaPagina, cor, largura, altura, marginDown, raio, corTexto, login, user, senha} : BotaoProps ) {
 
-    const fecharTeclado = () => {
-
+    const acoesOnPress = () => {
+        
         if(irParaPagina != undefined) {
             irParaPagina();
         }
-        
+
+        if(login != undefined && user != undefined && senha != undefined) {
+            login(user, senha);
+        }
+
         Keyboard.dismiss();
-    };
+    }
 
     return (
         <>
             <TouchableOpacity
                 style={[styles.botao, {borderRadius: raio, marginBottom: marginDown, marginTop: marginTop, backgroundColor: cor, width: largura, height: altura}]}
-                onPress={fecharTeclado}
+                onPress={acoesOnPress}
             >
                     <Text style={[styles.botao_texto, {color: corTexto}]}> {texto} </Text>
             </TouchableOpacity>

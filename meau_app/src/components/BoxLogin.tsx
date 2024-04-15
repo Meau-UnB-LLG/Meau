@@ -4,6 +4,9 @@ import { StyleSheet, Text, View, Keyboard, TextInput, TouchableOpacity, Touchabl
 import { FontAwesome6 } from '@expo/vector-icons';
 import BotaoUsual from './BotaoUsual';
 
+import { getAuth, signInWithEmailAndPassword } from '../configs/firebaseConfig';
+
+
 export function BoxLogin() {
 
     const [userTexto, setUserTexto] = useState('');
@@ -33,6 +36,21 @@ export function BoxLogin() {
             return null;
         }
     };
+
+
+    function login(user: string, senha: string) {
+    
+        signInWithEmailAndPassword(getAuth(), user, senha)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log('Entrou:', user.email);
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error('Deu ruim:', errorMessage);
+        });
+    }
 
     return (
         <View style={styles.container}>
@@ -64,7 +82,7 @@ export function BoxLogin() {
                 
             </View>
 
-            <BotaoUsual texto='ENTRAR' marginTop={52}/>
+            <BotaoUsual texto='ENTRAR' marginTop={52} login={login} user={userTexto} senha={senhaTexto}/>
             
         </View>
     )
