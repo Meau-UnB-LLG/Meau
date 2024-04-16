@@ -4,10 +4,22 @@ import { StyleSheet, Text, View, Keyboard, TextInput, TouchableOpacity, Touchabl
 import { FontAwesome6 } from '@expo/vector-icons';
 import BotaoUsual from './BotaoUsual';
 
-import { getAuth, signInWithEmailAndPassword } from '../configs/firebaseConfig';
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from '../configs/firebaseConfig';
+
+
+
 
 
 export function BoxLogin() {
+
+    onAuthStateChanged(getAuth(), (user) => {
+
+        if (user) {
+            console.log('Logado:', user.email);
+        } else {
+            console.log('Usuario saiu');
+        }
+    });
 
     const [userTexto, setUserTexto] = useState('');
     const [senhaTexto, setSenhaTexto] = useState('');
